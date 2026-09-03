@@ -21,7 +21,7 @@ composeRules = "0.6.6"
 # Must match kotlinx-coroutines-core in the app (1.9.0, pinned by the Compose BOM
 # via AGP consistent resolution). A newer coroutines-test calls core APIs that
 # 1.9.0 lacks -> NoSuchMethodError at runtime in instrumented tests.
-coroutinesTest = "1.9.0"
+coroutinesTest = "1.11.0"
 junit = "4.13.2"
 junitJupiter = "5.13.2"
 androidJunit5 = "2.0.1"
