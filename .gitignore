@@ -1,0 +1,33 @@
+# --- Build output ---
+.gradle/
+.kotlin/
+build/
+/build/
+/app/build/
+captures/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.hprof
+
+# --- Local / machine-specific ---
+local.properties
+*.log
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.idea/
+*.iml
+
+# --- Signing secrets (keep keystore.properties.example) ---
+keystore.properties
+*.jks
+*.keystore
+
+# --- Agent tooling runtime state (configs .claude/settings.json,
+#     .codex/hooks.json and .dev/hooks/ ARE committed on purpose) ---
+.dev/hooks/.last-blocked-hash
+.claude/settings.local.json

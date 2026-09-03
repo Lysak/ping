@@ -1,0 +1,46 @@
+# PING detekt config. Used with buildUponDefaultConfig = true, so this file
+# only holds deltas from detekt's defaults. See docs/tools.md §3.2.
+# Targets detekt 2.0.x.
+
+complexity:
+  LongParameterList:
+    ignoreAnnotated: ['Composable']
+  LongMethod:
+    ignoreAnnotated: ['Composable', 'Preview']
+  TooManyFunctions:
+    ignoreAnnotatedFunctions: ['Composable']
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable', 'Preview']
+  TopLevelPropertyNaming:
+    ignoreAnnotated: ['Composable', 'Preview']
+
+style:
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotation: true
+    ignoreNamedArgument: true
+    ignoreEnums: true
+    # ui/theme: dp/sp design tokens are inherently literal.
+    # net + core: ICMP/IP wire-format offsets and ping-stats arithmetic — the
+    #   numbers are the spec (RFC 792 / BSD ping), documented in comments;
+    #   naming every byte index adds noise, not clarity.
+    # Revisit if either package grows non-protocol logic.
+    excludes:
+      ['**/ui/theme/**', '**/net/**', '**/core/**', '**/test/**', '**/androidTest/**']
+  ReturnCount:
+    max: 3
+    excludeGuardClauses: true
+  MaxLineLength:
+    maxLineLength: 100
+  ForbiddenComment:
+    active: false
+
+# io.nlopez.compose.rules — Compose-specific lints.
+Compose:
+  CompositionLocalAllowlist:
+    # LocalPingColors is the deliberate metiq-style token layer (see PingColors.kt).
+    allowedCompositionLocals:
+      - LocalPingColors

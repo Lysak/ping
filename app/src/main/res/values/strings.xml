@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">Ping</string>
+    <string name="ping_start">Ping</string>
+    <string name="ping_stop">Stop</string>
+    <string name="target_cd">Change target host</string>
+    <string name="hosts_title">Target host</string>
+    <string name="hosts_add">Add host</string>
+    <string name="hosts_label_hint">Label</string>
+    <string name="hosts_host_hint">Hostname or IP</string>
+    <string name="hosts_invalid">Enter a valid hostname or IP address</string>
+    <string name="hosts_delete_cd">Delete host</string>
+    <string name="console_copy">Copy</string>
+    <string name="console_share">Share</string>
+    <string name="stat_min">min</string>
+    <string name="stat_avg">avg</string>
+    <string name="stat_max">max</string>
+    <string name="stat_jitter">jitter</string>
+    <string name="stat_loss">loss</string>
+</resources>

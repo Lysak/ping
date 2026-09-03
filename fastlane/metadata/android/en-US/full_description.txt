@@ -1,0 +1,29 @@
+A tiny, beautiful, native Android app that does one thing: ping a host and show
+the latency. No ads, no trackers, no accounts, no Firebase, no push. Open source.
+
+How it's actually built
+
+Real ICMP echo, done the right way: PING opens an unprivileged ICMP datagram
+socket (SOCK_DGRAM / IPPROTO_ICMP) and sends the echo packets itself - no root,
+no su, no shelling out to the ping binary, no bundled native blob. Round-trip
+time is measured with System.nanoTime() and reported to 1/100 ms, with live
+jitter / standard deviation. Output matches BSD/Linux ping line for line. It
+falls back to the system ping binary, then to TCP-connect timing, only when a
+network blocks ICMP.
+
+Features
+
+- One screen: a big latency number with a wave pulse, min / avg / max / jitter /
+  loss%, and a sparkline.
+- A geek console below that prints real ping-style lines and the standard
+  statistics block.
+- One big PING button. Tap to start, tap to stop.
+- Default hosts Google (8.8.8.8) and Cloudflare (1.1.1.1), plus your own
+  validated hosts, saved on the device.
+- Copy or share the full transcript as plain text.
+- Pinging runs only while the app is on screen.
+
+No trackers, no ads, no accounts
+
+PING collects nothing and talks to no one but the host you choose. Fully open
+source, GPL-3.0-or-later.
