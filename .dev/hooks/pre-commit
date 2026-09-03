@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Full quality gate before a commit lands. Shared by humans and agents.
+# Enable once per clone:  git config core.hooksPath .dev/hooks
+# Skip for a single commit: git commit --no-verify   (or SKIP_GATE=1 git commit)
+
+set -uo pipefail
+
+[ "${SKIP_GATE:-0}" = "1" ] && exit 0
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root" || exit 1
+
+if ! git diff --cached --name-only | grep -qE '\.(kt|kts)$|^gradle/|^config/detekt/'; then
+  exit 0
+fi
+
+echo "pre-commit: running \`make verify\` ..."
+if ! make verify; then
+  echo
+  echo "pre-commit: quality gate failed. Fix it, or commit with --no-verify to override." >&2
+  exit 1
+fi

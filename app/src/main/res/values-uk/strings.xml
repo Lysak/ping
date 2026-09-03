@@ -1,0 +1,18 @@
+<resources>
+    <string name="ping_start">Пінг</string>
+    <string name="ping_stop">Стоп</string>
+    <string name="target_cd">Змінити цільовий вузол</string>
+    <string name="hosts_title">Цільовий вузол</string>
+    <string name="hosts_add">Додати вузол</string>
+    <string name="hosts_label_hint">Мітка</string>
+    <string name="hosts_host_hint">Ім\'я хоста або IP</string>
+    <string name="hosts_invalid">Введіть коректне ім\'я хоста або IP-адресу</string>
+    <string name="hosts_delete_cd">Видалити вузол</string>
+    <string name="console_copy">Копіювати</string>
+    <string name="console_share">Поділитися</string>
+    <string name="stat_min">мін</string>
+    <string name="stat_avg">сер</string>
+    <string name="stat_max">макс</string>
+    <string name="stat_jitter">джитер</string>
+    <string name="stat_loss">втрати</string>
+</resources>

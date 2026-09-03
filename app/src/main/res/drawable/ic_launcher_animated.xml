@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash-screen icon: the concentric-ring mark drawing itself outward, once. -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="108dp"
+            android:height="108dp"
+            android:viewportWidth="108"
+            android:viewportHeight="108">
+
+            <group
+                android:name="ring_outer"
+                android:pivotX="54"
+                android:pivotY="54"
+                android:scaleX="0.3"
+                android:scaleY="0.3">
+                <path
+                    android:name="ring_outer_path"
+                    android:fillColor="#00000000"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#DBF1B3"
+                    android:strokeWidth="4"
+                    android:pathData="M54,54m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+            </group>
+
+            <group
+                android:name="ring_inner"
+                android:pivotX="54"
+                android:pivotY="54"
+                android:scaleX="0.3"
+                android:scaleY="0.3">
+                <path
+                    android:name="ring_inner_path"
+                    android:fillColor="#00000000"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#DBF1B3"
+                    android:strokeWidth="4"
+                    android:pathData="M54,54m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0" />
+            </group>
+
+            <group
+                android:name="pulse"
+                android:pivotX="54"
+                android:pivotY="54"
+                android:scaleX="0.5"
+                android:scaleY="0.5">
+                <path
+                    android:name="pulse_path"
+                    android:fillColor="#00000000"
+                    android:strokeAlpha="0"
+                    android:strokeColor="#DBF1B3"
+                    android:strokeWidth="3"
+                    android:pathData="M54,54m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+            </group>
+
+            <path
+                android:name="dot"
+                android:fillAlpha="0"
+                android:fillColor="#DBF1B3"
+                android:pathData="M54,54m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+        </vector>
+    </aapt:attr>
+
+    <target android:name="dot">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="180"
+                android:propertyName="fillAlpha"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:interpolator="@android:interpolator/decelerate_quad" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="ring_inner">
+        <aapt:attr name="android:animation">
+            <set android:startOffset="90">
+                <objectAnimator
+                    android:duration="320"
+                    android:propertyName="scaleX"
+                    android:valueFrom="0.3"
+                    android:valueTo="1"
+                    android:interpolator="@android:interpolator/overshoot" />
+                <objectAnimator
+                    android:duration="320"
+                    android:propertyName="scaleY"
+                    android:valueFrom="0.3"
+                    android:valueTo="1"
+                    android:interpolator="@android:interpolator/overshoot" />
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="ring_inner_path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="90"
+                android:duration="200"
+                android:propertyName="strokeAlpha"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:interpolator="@android:interpolator/decelerate_quad" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="ring_outer">
+        <aapt:attr name="android:animation">
+            <set android:startOffset="200">
+                <objectAnimator
+                    android:duration="340"
+                    android:propertyName="scaleX"
+                    android:valueFrom="0.3"
+                    android:valueTo="1"
+                    android:interpolator="@android:interpolator/overshoot" />
+                <objectAnimator
+                    android:duration="340"
+                    android:propertyName="scaleY"
+                    android:valueFrom="0.3"
+                    android:valueTo="1"
+                    android:interpolator="@android:interpolator/overshoot" />
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="ring_outer_path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:startOffset="200"
+                android:duration="200"
+                android:propertyName="strokeAlpha"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:interpolator="@android:interpolator/decelerate_quad" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="pulse">
+        <aapt:attr name="android:animation">
+            <set android:startOffset="320">
+                <objectAnimator
+                    android:duration="520"
+                    android:propertyName="scaleX"
+                    android:valueFrom="0.5"
+                    android:valueTo="1.7"
+                    android:interpolator="@android:interpolator/decelerate_quad" />
+                <objectAnimator
+                    android:duration="520"
+                    android:propertyName="scaleY"
+                    android:valueFrom="0.5"
+                    android:valueTo="1.7"
+                    android:interpolator="@android:interpolator/decelerate_quad" />
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="pulse_path">
+        <aapt:attr name="android:animation">
+            <set android:startOffset="320">
+                <objectAnimator
+                    android:duration="120"
+                    android:propertyName="strokeAlpha"
+                    android:valueFrom="0"
+                    android:valueTo="0.55"
+                    android:interpolator="@android:interpolator/decelerate_quad" />
+                <objectAnimator
+                    android:startOffset="120"
+                    android:duration="400"
+                    android:propertyName="strokeAlpha"
+                    android:valueFrom="0.55"
+                    android:valueTo="0"
+                    android:interpolator="@android:interpolator/accelerate_quad" />
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

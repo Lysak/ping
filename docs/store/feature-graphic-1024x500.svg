@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500">
+  <rect width="1024" height="500" fill="#111010"/>
+  <g>
+    <circle cx="185" cy="250" r="120" fill="none" stroke="#DBF1B3" stroke-width="14"/>
+    <circle cx="185" cy="250" r="72" fill="none" stroke="#DBF1B3" stroke-width="14"/>
+    <circle cx="185" cy="250" r="24" fill="#DBF1B3"/>
+  </g>
+  <text x="370" y="185" font-family="Helvetica,Arial,sans-serif" font-size="76" font-weight="bold" fill="#DBF1B3">NO ADS</text>
+  <text x="370" y="285" font-family="Helvetica,Arial,sans-serif" font-size="76" font-weight="bold" fill="#DBF1B3">NO TRACKING</text>
+  <text x="370" y="385" font-family="Helvetica,Arial,sans-serif" font-size="76" font-weight="bold" fill="#DBF1B3">NO ACCOUNT</text>
+</svg>
